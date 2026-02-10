@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="شات عربي - أفضل دردشة عربية مجانية بدون تسجيل. انضم إلينا وتواصل مع أصدقاء جدد من جميع أنحاء العالم العربي">
+    <meta name="keywords" content="شات عربي, دردشة عربية, شات مجاني, تعارف, دردشة بدون تسجيل">
+    <meta name="author" content="Arab Chat">
+    <title>شات عربي | أفضل دردشة عربية مجانية بدون تسجيل</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts - Arabic Support -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            direction: rtl;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        /* Login Buttons */
+        .login-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 400px;
+            margin: 30px auto;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #933C01 0%, #c44f00 100%);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #6c757d 0%, #545b62 100%);
+            color: white;
+        }
+
+        .btn-register {
+            background: linear-gradient(135deg, #3257EC 0%, #1e3a8a 100%);
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Social Media Icons */
+        .social-media {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .facebook { background: #3b5998; }
+        .twitter { background: #1da1f2; }
+        .instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .youtube { background: #ff0000; }
+        .google-play { background: #0781dd; }
+
+        /* Content Sections */
+        .content-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            color: #ff6600;
+            background: linear-gradient(135deg, #0073e6 0%, #005bb5 100%);
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+
+        .section-title i {
+            margin-left: 10px;
+        }
+
+        .content-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-list li:before {
+            content: "✓ ";
+            color: #0073e6;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        /* Chat Rooms Grid */
+        .chat-rooms {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .rooms-title {
+            text-align: center;
+            color: #ff6600;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .rooms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .room-link {
+            display: block;
+            padding: 15px;
+            background: linear-gradient(135deg, #0073e6 0%, #005bb5 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .room-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+            background: linear-gradient(135deg, #005bb5 0%, #003d7a 100%);
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 40px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 22px;
+            }
+
+            .btn {
+                font-size: 16px;
+                padding: 12px 25px;
+            }
+
+            .rooms-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 10px;
+            }
+
+            .section-title {
+                font-size: 18px;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header, .content-section, .chat-rooms {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Scroll animations */
+        .content-section:nth-child(even) {
+            animation-delay: 0.1s;
+        }
+
+        .content-section:nth-child(odd) {
+            animation-delay: 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <img src="https://www.arabc.chat/default_images/logo.png" alt="شات عربي" class="logo">
+            
+            <h1>شات عربي | أفضل دردشة عربية مجانية بدون تسجيل<br>انضم إلينا وتواصل مع أصدقاء جدد</h1>
+
+            <!-- Login Buttons -->
+            <div class="login-buttons">
+                <button class="btn btn-primary" onclick="alert('الرجاء تفعيل هذه الميزة')">
+                    <i class="far fa-user"></i>
+                    دخول الأعضاء
+                </button>
+                
+                <button class="btn btn-secondary" onclick="alert('الرجاء تفعيل هذه الميزة')">
+                    <i class="fa fa-user-secret"></i>
+                    دخول كضيف
+                </button>
+                
+                <button class="btn btn-register" onclick="alert('الرجاء تفعيل هذه الميزة')">
+                    <i class="fa fa-user-plus"></i>
+                    التسجيل الآن
+                </button>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="social-media">
+                <a href="https://www.facebook.com/" target="_blank" class="social-icon facebook" title="تابعنا على فيسبوك">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://x.com/" target="_blank" class="social-icon twitter" title="تابعنا على تويتر">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" class="social-icon instagram" title="تابعنا على انستجرام">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.youtube.com/" target="_blank" class="social-icon youtube" title="تابعنا على يوتيوب">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=arabc.chat.free" target="_blank" class="social-icon google-play" title="حمل التطبيق">
+                    <i class="fab fa-google-play"></i>
+                </a>
+            </div>
+        </header>
+
+        <!-- FAQ Section -->
+        <section class="content-section">
+            <h2 class="section-title">
+                <i class="fa fa-question-circle"></i>
+                الأسئلة الشائعة
+            </h2>
+            <p class="content-text">
+                شات عربي هو تطبيق وموقع للدردشة والتواصل يجمع المتحدثين باللغة العربية في مكان واحد، حيث يمكنك تكوين صداقات جديدة والدردشة مع أشخاص من جميع أنحاء العالم العربي. يوفر هذا الشات مساحة لمشاركة اهتماماتك ومناقشة الموضوعات المختلفة بحرية.
+            </p>
+            <p class="content-text">
+                لماذا تختار شات عربي؟ يعد شات عربي فرصة رائعة للتعارف وتكوين صداقات جديدة، وتسمح لك المنصة بالتواصل مع الآخرين بدون حواجز. يمكنك التحدث في الوقت الفعلي وممارسة اللغة العربية، مما يجعل الشات العربي ملاذًا للتفاعل والمشاركة.
+            </p>
+        </section>
+
+        <!-- Features Section -->
+        <section class="content-section">
+            <h2 class="section-title">
+                <i class="fa fa-gift"></i>
+                مميزات شات عربي
+            </h2>
+            <ul class="feature-list">
+                <li>خيارات لتغيير نوع الخط، اللون، والحجم</li>
+                <li>إرسال رسائل خاصة وعامة غير محدودة</li>
+                <li>إمكانية إرسال الصور من المعرض أو الكاميرا مباشرة في المحادثات</li>
+                <li>استخدام رموز السمايلي في الدردشة العامة والخاصة</li>
+                <li>تغيير صورة الملف الشخصي للمستخدم</li>
+                <li>تجاهل الرسائل من أشخاص محددين</li>
+                <li>خيارات لمنع استقبال رسائل خاصة</li>
+                <li>البحث عن الأصدقاء في قائمة المتواجدين</li>
+                <li>تغيير لون الاسم والرسائل حسب الرغبة</li>
+                <li>عضوية خاصة للمشرفين تمكنهم من إدارة الشات وطرد المستخدمين المخالفين</li>
+            </ul>
+        </section>
+
+        <!-- Privacy Section -->
+        <section class="content-section">
+            <h2 class="section-title">
+                <i class="fa fa-ban"></i>
+                كيفية تجاهل الأشخاص المزعجين
+            </h2>
+            <p class="content-text">
+                يمكنك تجاهل الأشخاص المزعجين بسهولة عبر فتح ملفهم الشخصي والنقر على خيار "تجاهل". يوفر ذلك تجربة شات عربي خالية من الإزعاج.
+            </p>
+        </section>
+
+        <!-- Guidelines Section -->
+        <section class="content-section">
+            <h2 class="section-title">
+                <i class="fa fa-shield-alt"></i>
+                كيفية تجنب الحظر في الشات
+            </h2>
+            <ul class="feature-list">
+                <li>استخدم أسماء لائقة ومحترمة</li>
+                <li>احترم آراء ومعتقدات الآخرين</li>
+                <li>تجنب الإساءة لأي شخص أو معتقد ديني</li>
+            </ul>
+        </section>
+
+        <!-- Profile Section -->
+        <section class="content-section">
+            <h2 class="section-title">
+                <i class="fa fa-user-circle"></i>
+                الملف الشخصي
+            </h2>
+            <p class="content-text">
+                يمكنك تعديل ملفك الشخصي وتغيير المعلومات مثل العمر، الحالة، واللغة، كما يمكنك إضافة الأصدقاء وتحديث تفاصيل الحساب.
+            </p>
+        </section>
+
+        <!-- Friends Section -->
+        <section class="content-section">
+            <h2 class="section-title">
+                <i class="fa fa-handshake"></i>
+                إضافة الأصدقاء وقبول الطلبات
+            </h2>
+            <p class="content-text">
+                يمكنك عرض طلبات الأصدقاء المعلقة من أيقونة "إضافة صديق" أعلى الملف الشخصي. كما يمكنك الوصول إلى قائمة أصدقائك بسهولة.
+            </p>
+        </section>
+
+        <!-- Security Section -->
+        <section class="content-section">
+            <h2 class="section-title">
+                <i class="fa fa-lock"></i>
+                الأمان والخصوصية
+            </h2>
+            <p class="content-text">
+                شات عربي يتيح لك التحكم بإعدادات الخصوصية لمنحك شعورًا بالأمان والراحة أثناء استخدام المنصة.
+            </p>
+        </section>
+
+        <!-- Chat Rooms Section -->
+        <section class="chat-rooms">
+            <h2 class="rooms-title">غرف الدردشة</h2>
+            <div class="rooms-grid">
+                <a href="https://www.arabc.chat/algeria/" class="room-link">شات الجزائر</a>
+                <a href="https://www.arabc.chat/bahrain/" class="room-link">شات البحرين</a>
+                <a href="https://www.arabc.chat/emirates/" class="room-link">شات الإمارات</a>
+                <a href="https://www.arabc.chat/jordan/" class="room-link">شات الأردن</a>
+                <a href="https://www.arabc.chat/kuwait/" class="room-link">شات الكويت</a>
+                <a href="https://www.arabc.chat/libya/" class="room-link">شات ليبيا</a>
+                <a href="https://www.arabc.chat/tunisia/" class="room-link">شات تونس</a>
+                <a href="https://www.arabc.chat/maroc/" class="room-link">شات المغرب</a>
+                <a href="https://www.arabc.chat/oman/" class="room-link">شات عمان</a>
+                <a href="https://www.arabc.chat/sudan/" class="room-link">شات السودان</a>
+                <a href="https://www.arabc.chat/palestine/" class="room-link">شات فلسطين</a>
+                <a href="https://www.arabc.chat/qatar/" class="room-link">شات قطر</a>
+                <a href="https://www.arabc.chat/egypt/" class="room-link">شات مصر</a>
+                <a href="https://www.arabc.chat/saudi/" class="room-link">شات السعودية</a>
+                <a href="https://www.arabc.chat/lebanon/" class="room-link">شات لبنان</a>
+                <a href="https://www.arabc.chat/syria/" class="room-link">شات سوريا</a>
+                <a href="https://www.arabc.chat/iraq/" class="room-link">شات العراق</a>
+                <a href="https://www.arabc.chat/yemen/" class="room-link">شات اليمن</a>
+                <a href="https://www.arabc.chat/action/" class="room-link">شات أكشن</a>
+                <a href="https://www.arabc.chat/love/" class="room-link">شات الحب</a>
+                <a href="https://www.arabc.chat/random/" class="room-link">شات عشوائي</a>
+                <a href="https://www.arabc.chat/video-arabc-chat/" class="room-link">شات عربي فيديو</a>
+                <a href="https://www.arabc.chat/voice-chat/" class="room-link">شات صوتي</a>
+                <a href="https://www.arabc.chat/free-arabc-chat/" class="room-link">شات عربي مجاني</a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 شات عربي - جميع الحقوق محفوظة</p>
+            <p>التقِ بأصدقاء عرب جدد من مختلف أنحاء العالم واستمتع بالدردشة الجماعية</p>
+        </footer>
+    </div>
+
+    <script>
+        // Smooth scroll animation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.content-section, .chat-rooms').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 0.6s ease-out';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
